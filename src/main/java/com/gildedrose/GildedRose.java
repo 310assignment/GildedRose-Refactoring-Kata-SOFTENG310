@@ -1,11 +1,12 @@
 package com.gildedrose;
 
 class GildedRose {
-    Item[] items;
+  Item[] items;
 
-    public GildedRose(Item[] items) {
-        this.items = items;
-    }
+
+  public GildedRose(Item[] items) {
+    this.items = items;
+  }
 
     public boolean meetsRequirements(Item item){
         if (!item[i].name.equals("Aged Brie")) {
@@ -43,11 +44,9 @@ class GildedRose {
                     }
                 }
             }
-
-            if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
-                items[i].sellIn = items[i].sellIn - 1;
-            }
-
+    if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
+      items[i].sellIn = items[i].sellIn - 1;
+    }
             if (items[i].sellIn < 0) {
                 if (meetsRequirements(item[i])){
                         items[i].quality = items[i].quality - 1;
@@ -61,5 +60,17 @@ class GildedRose {
                 }
             
         }
+      } else {
+        if (items[i].quality < 50) {
+          items[i].quality = items[i].quality + 1;
+        }
+      }
     }
+  }
+
+  private void increaseQualityIfPossible(Item item) {
+    if (item.quality < 50) {
+      item.quality++;
+    }
+  }
 }
