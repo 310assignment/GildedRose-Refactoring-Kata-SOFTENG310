@@ -3,6 +3,7 @@ package com.gildedrose;
 class GildedRose {
   Item[] items;
 
+
   public GildedRose(Item[] items) {
     this.items = items;
   }
@@ -32,6 +33,7 @@ class GildedRose {
     if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
       items[i].sellIn = items[i].sellIn - 1;
     }
+
 
     if (items[i].sellIn < 0) {
       if (!items[i].name.equals("Aged Brie")) {
